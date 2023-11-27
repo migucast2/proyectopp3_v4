@@ -1,0 +1,55 @@
+﻿@page "/productlist"
+@using OrderSystem.BusinessObjects.Entities;
+@using OrderSystem.Services;
+
+<PageTitle>Lista de Productos</PageTitle>
+
+<h1>Productos</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produc in products)
+            {
+                <tr>
+                    <td>@produc.ProductId</td>
+                    <td>@produc.Name</td>
+                    <td>@produc.UnitPrice</td>
+                    <td>@produc.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Product> products = new List<Product>();
+    private ProductService service = new ProductService();
+
+    protected override async Task OnInitializedAsync()
+    {
+        string ruta = AppDomain.CurrentDomain.BaseDirectory;
+        products = service.GetAll();
+
+        //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        //products.Add(new Product{ProductId =1,Name="Prueba",UnitPrice = 5000, Description = "Prueba"});
+
+    }
+
+    
+}

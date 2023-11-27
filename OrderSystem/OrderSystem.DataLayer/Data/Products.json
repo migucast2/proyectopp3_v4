@@ -1,0 +1,23 @@
+[
+  {
+    "ProductId": 1,
+    "Name": "Pepsi",
+    "UnitPrice": 500,
+    "Category": "Bebida",
+    "Description": "Gaseosa"
+  },
+  {
+    "ProductId": 1,
+    "Name": "Pepsi",
+    "UnitPrice": 500,
+    "Category": "Bebida",
+    "Description": "Gaseosa"
+  },
+  {
+    "ProductId": 1,
+    "Name": "Pepsi",
+    "UnitPrice": 500,
+    "Category": "Bebida",
+    "Description": "Gaseosa"
+  }
+]
